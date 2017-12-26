@@ -1,0 +1,43 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{ % static "css/bootstrap.css" %}" rel="stylesheet"/>
+    <link href="{ % static "css/custom.css" %}" rel="stylesheet"/>
+</head>
+<body>
+	<div class="main">
+            <p>Today is {{tareekh}}</p>
+            <h1> Instagram Clone</h1>
+            <h3>Sign Up</h3>
+    </div>
+
+    <div>
+        <form method="post">
+            { % csrf_token % }
+
+            <div>
+                <label for="username">Username: </label>
+                <input id="username" type="text" name="username" value={{ username }}>
+            </div>
+            <div>
+                <label for="password">Password: </label>
+                <input id="password" type="password" name="password" value={{ password }}>
+            </div>
+                <input type="button" value="login">
+        </form>
+
+
+    </div><br><br>
+
+    <div><h3>Already a user?</h3><a href="login/">Login</a> </div>
+
+<!-- added javascript files-->
+<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "js/bootstrap.js" %}"></<script>
+<script src="{% static "js/custom.js" %}"></<script>
+
+</body>
+</html>
